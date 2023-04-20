@@ -1,6 +1,25 @@
+.align-center {
+  display: flex !important;
+  align-items: center;
+}
+
 #navigationShopfloor {
   background-color: #0d4671;
 }
 #navigationShopfloor .navbar-brand {
   color: #fff;
+}
+
+#mainContentDashboard .col-lg-3 {
+  width: 20%;
+  padding: 6px;
+}
+#mainContentDashboard .col-lg-3 .card {
+  border: none;
+}
+#mainContentDashboard .col-lg-3 .card .card-header {
+  border: none;
+}
+#mainContentDashboard .col-lg-3 .card .card-body {
+  height: 40vh;
 }/*# sourceMappingURL=main.min.css.map */

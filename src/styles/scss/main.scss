@@ -1,6 +1,12 @@
 // Deklration
 $main-clr: #0d4671;
 
+// Global Classes
+.align-center {
+    display: flex !important;
+    align-items: center;
+}
+
 // Navigation
 #navigationShopfloor {
     background-color: $main-clr;
@@ -13,8 +19,22 @@ $main-clr: #0d4671;
 // Main-Content
 #mainContentDashboard {
 
-    & .content-card{
+    & .col-lg-3 {
+        width: 20%;
+        padding: 6px;
 
+        & .card {
+            border: none;
+
+            & .card-header {
+                border: none;
+                
+            }
+            & .card-body{
+                height: 40vh;
+            }
+        }
     }
+
 }
 
