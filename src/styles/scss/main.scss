@@ -1,0 +1,20 @@
+// Deklration
+$main-clr: #0d4671;
+
+// Navigation
+#navigationShopfloor {
+    background-color: $main-clr;
+    
+    & .navbar-brand {
+        color: #fff;
+    }
+}
+
+// Main-Content
+#mainContentDashboard {
+
+    & .content-card{
+
+    }
+}
+
