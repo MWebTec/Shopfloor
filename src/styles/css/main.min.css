@@ -3,6 +3,24 @@
   align-items: center;
 }
 
+.cicle {
+  width: 20%;
+  height: 100%;
+  border-radius: 50%;
+  margin-left: 40%;
+  background-color: #afafaf;
+}
+
+.cicleIO {
+  color: #fff;
+  background-color: green;
+}
+
+.cicleNIO {
+  color: #fff;
+  background-color: red;
+}
+
 #navigationShopfloor {
   background-color: #0d4671;
 }
@@ -10,8 +28,52 @@
   color: #fff;
 }
 
+#mainContentDashboard #safty .card-header {
+  background-color: yellow;
+}
+#mainContentDashboard #safty #calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.1rem;
+  margin: 1rem;
+}
+#mainContentDashboard #safty #calendar .day {
+  text-align: center;
+}
+#mainContentDashboard #safty #calendar .dayIO {
+  background-color: green;
+}
+#mainContentDashboard #safty #calendar .dayNIO {
+  background-color: red;
+}
+#mainContentDashboard #safty #calendar .dayFuture {
+  background-color: lightgray;
+}
+#mainContentDashboard #safty #calendar .today {
+  width: 100%;
+  height: 100%;
+  border: solid 2px #0d4671;
+  border-radius: 50%;
+}
+#mainContentDashboard #safty #calendar #unfallfrei {
+  width: 100%;
+}
+#mainContentDashboard #quality .card-header {
+  background-color: green;
+  color: #fff;
+}
+#mainContentDashboard #cost .card-header {
+  background-color: #0d4671;
+  color: #fff;
+}
+#mainContentDashboard #delivery .card-header {
+  background-color: gray;
+  color: #fff;
+}
+#mainContentDashboard #personal .card-header {
+  background-color: orange;
+}
 #mainContentDashboard .col-lg-3 {
-  width: 20%;
   padding: 6px;
 }
 #mainContentDashboard .col-lg-3 .card {
@@ -21,5 +83,16 @@
   border: none;
 }
 #mainContentDashboard .col-lg-3 .card .card-body {
-  height: 40vh;
+  min-height: 40vh;
+}
+
+@media screen and (min-width: 1100px) {
+  .col-lg-3 {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 1099px) {
+  .col-lg-3 {
+    width: 50%;
+  }
 }/*# sourceMappingURL=main.min.css.map */

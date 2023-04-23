@@ -9,7 +9,7 @@
             name="description"
             content="Shopfloor Managment Dashboard SQDCP: Safty, Qualti, Delivery, Cost and Personal"
         />
-        <meta name="author" content="Malte Wenzel" />
+        <meta name="author" content="Malte Wenzel"/>
         <!-- Style -->
         <!-- Bootstrap -->
         <link
@@ -29,55 +29,48 @@
                     Shopfloor Managment
                 </a>
                 <div class="align-center">
-                    <p class="text-white m-0" id="navDateAndTime">Date and Time</p>
-                    <p class="text-white m-0" id="navKW">(KW)</p>
+                    <p class="text-white m-0 me-1" id="navDateAndTime"></p>
+                    <p class="text-white m-0" id="navKW"></p>
                 </div>
             </div>
         </nav>
 
         <main class="container-fluid mt-3" id="mainContentDashboard">
             <div class="row justify-content-around">
+                <!-- Arbeitssicherheit -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" id="safty">
                         <div class="card-header">
-                            <h5>Safty
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
-                            </h5>
-                      
-                        </div>
-                        <div class="card-body">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header">
-                            <h5>Quality
+                            <h5>Arbeitssicherheit
                                 <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
                             </h5>
                         </div>
-                        <div class="card-body">
-                            
+                        <div class="card-body p-0">
+                            <div id="calendar"></div>
+                            <div id="unfallfrei">
+                                <h5 class="text-center">Unfallfreie Tage</h5>
+                                <h5 class="text-center">20</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Quqlity -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" id="quality">
                         <div class="card-header">
-                            <h5>Cost
+                            <h5>Qualität
                                 <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
                             </h5>
                         </div>
-                        <div class="card-body">
-                            
+                        <div class="card-body">  
                         </div>
                     </div>
                 </div>
+                <!-- Cost -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" id="cost">
                         <div class="card-header">
-                            <h5>Delivery
+                            <h5>Kosten
                                 <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
                             </h5>
                         </div>
@@ -86,10 +79,24 @@
                         </div>
                     </div>
                 </div>
+                <!-- Delivery -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm" id="delivery">
                         <div class="card-header">
-                            <h5>Person
+                            <h5>Logistik
+                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Personal -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow-sm" id="personal">
+                        <div class="card-header">
+                            <h5>Personal
                                 <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
                             </h5>
                         </div>
@@ -143,6 +150,8 @@
         <footer></footer>
 
         <!-- Scripts -->
+
+        <script src="../src/assets/js/date.js"></script>
         <!-- Bootstrap bundle -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

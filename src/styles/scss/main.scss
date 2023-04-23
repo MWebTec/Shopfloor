@@ -1,13 +1,31 @@
-// Deklration
+// ####################### Deklration ####################### 
 $main-clr: #0d4671;
 
-// Global Classes
+// ####################### Global Classes ####################### 
 .align-center {
     display: flex !important;
     align-items: center;
 }
 
-// Navigation
+.cicle {
+    width: 20%;
+    height: 100%;
+    border-radius: 50%;
+    margin-left: 40%;
+    background-color: #afafaf;
+}
+
+.cicleIO {
+    color: #fff;
+    background-color: green;
+}
+
+.cicleNIO {
+    color: #fff;
+    background-color: red;
+}
+
+// ####################### Navigation ####################### 
 #navigationShopfloor {
     background-color: $main-clr;
     
@@ -16,11 +34,82 @@ $main-clr: #0d4671;
     }
 }
 
-// Main-Content
+// ####################### Main-Content ####################### 
 #mainContentDashboard {
 
+    & #safty {
+        
+        & .card-header {
+            background-color: yellow;
+        }
+
+        & #calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: .1rem;
+            margin: 1rem;
+            
+            & .day {
+                text-align: center;
+            }
+
+            & .dayIO {
+                background-color: green;
+            }
+
+            & .dayNIO {
+                background-color: red;
+            }
+
+            & .dayFuture {
+                background-color: lightgray;
+            }
+
+            & .today {
+                width: 100%;
+                height: 100%;
+                border: solid 2px $main-clr;
+                border-radius: 50%;
+            }
+
+            & #unfallfrei {
+                width: 100%;
+            }
+        }
+    }
+
+    & #quality {
+
+        & .card-header {
+            background-color: green;
+            color: #fff;
+        }
+    }
+
+    & #cost{
+
+        & .card-header {
+            background-color: $main-clr;
+            color: #fff;
+        }
+    }
+
+    & #delivery{
+
+        & .card-header {
+            background-color: gray;
+            color: #fff;
+        }
+    }
+
+    & #personal{
+
+        & .card-header {
+            background-color: orange;
+        }
+    }
+
     & .col-lg-3 {
-        width: 20%;
         padding: 6px;
 
         & .card {
@@ -28,13 +117,25 @@ $main-clr: #0d4671;
 
             & .card-header {
                 border: none;
-                
             }
+
             & .card-body{
-                height: 40vh;
+                min-height: 40vh;
             }
         }
     }
 
+}
+
+@media screen and (min-width: 1100px) {
+    .col-lg-3 {
+        width: 20%;
+    }  
+}
+
+@media screen and (max-width: 1099px){
+    .col-lg-3 {
+        width: 50%;
+    }
 }
 
