@@ -1,4 +1,4 @@
-const dateAndTime = document.getElementById('navDateAndTime');
+const dateAndTime = document.getElementById("navDateAndTime");
 const kw = document.getElementById("navKW");
 
 const currentDate = new Date();
@@ -15,58 +15,75 @@ function getWeek(date) {
     return Math.ceil((daysSinceFirstDay + firstDayOfYear.getDay() + 1) / 7);
 }
 
-dateAndTime.innerHTML = `${currentDay}/${month}/${year} `;
-kw.innerHTML = `KW(${weekNumber})`; 
+dateAndTime.innerHTML = `${currentDay}-${month}-${year} `;
+kw.innerHTML = `KW(${weekNumber})`;
 
 // Create Calendar
 // die Anzahl der Tage im aktuellen Monat erhalten
-const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+const daysInMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+).getDate();
+
 // den ersten Tag des Monats erhalten
-const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
-// eine Liste mit den Namen der Wochentage
-const weekdays = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+const firstDayOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+).getDay();
+
 // eine Liste mit den Tagen des Monats
 const days = [];
 
 for (let i = 1; i <= daysInMonth; i++) {
-  days.push(i);
+    days.push(i);
 }
 
 // den Kalender in HTML generieren
-const calendar = document.getElementById('calendar');
+const calendar = document.querySelectorAll('.calendar');
 
-// die Kopfzeile mit den Wochentagen hinzufügen
-weekdays.forEach(weekday => {
-    const dayElement = document.createElement('div');
-    dayElement.textContent = weekday;
-    dayElement.classList.add('day', 'header');
-    calendar.appendChild(dayElement);
-  });
-  
-  // Leerzellen vor dem ersten Tag des Monats hinzufügen
-  for (let i = 0; i < firstDayOfMonth; i++) {
-    const dayElement = document.createElement('div');
-    dayElement.classList.add('day', 'empty');
-    calendar.appendChild(dayElement);
-  }
-  
-  // die Tage des Monats hinzufügen
-  days.forEach(day => {
-    const dayElement = document.createElement('div');
-    dayElement.textContent = day;
-    dayElement.classList.add('day');
+// Create Calender Div Function
+function createKalenderDivs(parent) {
+    for (let i = 0; i < 49; i++) {
+        const dayElement = document.createElement("div");
+        dayElement.classList.add("day", "empty");
+        parent.appendChild(dayElement);
+    }
+}
 
-    if (day < currentDay ) {
-        dayElement.classList.add('dayIO');
-    } else {
-        dayElement.classList.add('dayFuture');
+// Create Safty Calendar
+calendar.forEach(element => {
+  createKalenderDivs(element);
+});
+
+
+let dayCount = 1;
+
+// Zuweisung von den Tagen 1-31 den divs.
+function generateCalenderRow(start, end, arrayDiv) {
+    for (let i = start; i <= end; i++) {
+        if (dayCount <= 31) {
+            arrayDiv[i].innerText = dayCount;
+        }
+        arrayDiv[i].classList.remove("empty");
+        // Tag ohne Arbeitsunfall class setzten
+        if (i < currentDay) {
+            arrayDiv[i].classList.add("dayIO", "text-white");
+        } else {
+            arrayDiv[i].classList.add("dayFuture");
+        }
+        dayCount++;
     }
-    
-    // hervorheben, wenn es der heutige Tag ist
-    if (day === currentDate.getDate()) {
-      dayElement.classList.add('today');
-    }
-    
-    calendar.appendChild(dayElement);
-  });
+}
+
+const calendarDivs = document.querySelectorAll(".day");
+
+// Create Calendar for Safty
+generateCalenderRow(2, 4, calendarDivs);
+generateCalenderRow(9, 11, calendarDivs);
+generateCalenderRow(14, 34, calendarDivs);
+generateCalenderRow(37, 39, calendarDivs);
+generateCalenderRow(44, 46, calendarDivs);
+
 

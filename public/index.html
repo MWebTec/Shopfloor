@@ -9,7 +9,7 @@
             name="description"
             content="Shopfloor Managment Dashboard SQDCP: Safty, Qualti, Delivery, Cost and Personal"
         />
-        <meta name="author" content="Malte Wenzel"/>
+        <meta name="author" content="Malte Wenzel" />
         <!-- Style -->
         <!-- Bootstrap -->
         <link
@@ -18,15 +18,24 @@
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossorigin="anonymous"
         />
-        <script src="https://kit.fontawesome.com/95e8072647.js" crossorigin="anonymous"></script>        <!-- Cutomer -->
+        <script
+            src="https://kit.fontawesome.com/95e8072647.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Cutomer -->
         <link rel="stylesheet" href="../src/styles/css/main.min.css" />
     </head>
     <body class="bg-light">
-        <nav class="navbar navbar-light" id="navigationShopfloor">
-            <div class="container-fluid">
-                <a class="navbar-brand h1 m-0" href="#">
+        <nav class="navbar navbar-light p-2" id="navigationShopfloor">
+            <div class="container-fluid justify-content-between">
+                <div class="dropdown" data-bs-toggle="dropdown">
+                    <button type="button" class="btn">
+                        <i class="fa-solid fa-bars text-white fs-4"></i>
+                    </button>
+                </div>
+                <a class="navbar-brand m-0" href="#">
                     <img src="" alt="" />
-                    Shopfloor Managment
+                    <h1 class="d-inline h4">Digital Shopfloor</h1>
                 </a>
                 <div class="align-center">
                     <p class="text-white m-0 me-1" id="navDateAndTime"></p>
@@ -35,47 +44,85 @@
             </div>
         </nav>
 
+        <!-- Section Content Header-->
+        <section class="container-fluid mt-2">
+            <div class="row border-bottom me-1 ms-1">
+                <div class="row">
+                    <div class="col-lg-10" id="contentHeader">
+                        <h2 class="text-muted">Infokaskade</h2>
+                    </div>
+                    <div
+                        class="col-lg-2 d-flex justify-content-end align-items-center"
+                        id="contentFilter"
+                    >
+                        <button class="btn">
+                            <i
+                                class="fa-solid fa-ellipsis-vertical text-muted h-50"
+                            ></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <main class="container-fluid mt-3" id="mainContentDashboard">
             <div class="row justify-content-around">
                 <!-- Arbeitssicherheit -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm" id="safty">
                         <div class="card-header">
-                            <h5>Arbeitssicherheit
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            <h5>
+                                Arbeitssicherheit
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs mt-2"
+                                    id=""
+                                ></i>
                             </h5>
                         </div>
-                        <div class="card-body p-0">
-                            <div id="calendar"></div>
+                        <div class="card-body">
+                            <h5 class="text-center border-bottom">Arbeitsunfälle</h5>
+                            <div id="firstCalendar" class="calendar"></div>
                             <div id="unfallfrei">
-                                <h5 class="text-center">Unfallfreie Tage</h5>
-                                <h5 class="text-center">20</h5>
+                                <h5 class="text-center border-bottom">Unfallfreie Tage</h5>
+                                <h5 class="text-center h2">20</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Quqlity -->
+
+                <!-- Quality -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm" id="quality">
                         <div class="card-header">
-                            <h5>Qualität
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            <h5>
+                                Qualität
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs mt-2"
+                                    id=""
+                                ></i>
                             </h5>
                         </div>
-                        <div class="card-body">  
+                        <div class="card-body">
+                            <h5 class="text-center border-bottom">Kundenreklamation</h5>
+                            <div id="secondCalendar" class="calendar"></div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Cost -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm" id="cost">
                         <div class="card-header">
-                            <h5>Kosten
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            <h5>
+                                Kosten
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs mt-2"
+                                    id=""
+                                ></i>
                             </h5>
                         </div>
                         <div class="card-body">
-                            
+                            <div id="thirdCalendar" class="calendar"></div>
                         </div>
                     </div>
                 </div>
@@ -83,25 +130,34 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm" id="delivery">
                         <div class="card-header">
-                            <h5>Logistik
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            <h5>
+                                Logistik
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs mt-2"
+                                    id=""
+                                ></i>
                             </h5>
                         </div>
                         <div class="card-body">
-                            
+                            <div id="fourtCalendar" class="calendar"></div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Personal -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm" id="personal">
                         <div class="card-header">
-                            <h5>Personal
-                                <i class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs" id=""></i>  
+                            <h5>
+                                Personal
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square float-end fa-2xs mt-2"
+                                    id=""
+                                ></i>
                             </h5>
                         </div>
                         <div class="card-body">
-                            
+                            <div id="fifthCalendar" class="calendar"></div>
                         </div>
                     </div>
                 </div>
@@ -111,37 +167,27 @@
             <div class="row justify-content-around">
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm">
-                        <div class="card-body">
-
-                        </div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm">
-                        <div class="card-body">
-                            
-                        </div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm">
-                        <div class="card-body">
-                            
-                        </div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm">
-                        <div class="card-body">
-                            
-                        </div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow-sm">
-                        <div class="card-body">
-                            
-                        </div>
+                        <div class="card-body"></div>
                     </div>
                 </div>
             </div>
