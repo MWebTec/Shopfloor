@@ -1,5 +1,6 @@
 // ####################### Deklration ####################### 
 $main-clr: #0d4671;
+$dropdown-position: -20px;
 
 // ####################### Global Classes ####################### 
 .align-center {
@@ -29,6 +30,10 @@ $main-clr: #0d4671;
     border: none;
 }
 
+.my-custom-class {
+    padding: 0.25rem;
+  }
+
 // ####################### Navigation ####################### 
 #navigationShopfloor {
     background-color: $main-clr;
@@ -36,6 +41,24 @@ $main-clr: #0d4671;
     
     & .navbar-brand {
         color: #fff;
+    }
+
+    & #megadropdown {
+        box-sizing: border-box;
+        left: $dropdown-position;
+        top: 3rem;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 90vh;
+
+        & .row {
+            width: 100%;
+        }
+
+        & .dropdown-item {
+            width: auto;
+        }
     }
 }
 

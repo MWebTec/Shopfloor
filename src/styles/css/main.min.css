@@ -17,12 +17,31 @@
   border: none;
 }
 
+.my-custom-class {
+  padding: 0.25rem;
+}
+
 #navigationShopfloor {
   background-color: #0d4671;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #navigationShopfloor .navbar-brand {
   color: #fff;
+}
+#navigationShopfloor #megadropdown {
+  box-sizing: border-box;
+  left: -20px;
+  top: 3rem;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 90vh;
+}
+#navigationShopfloor #megadropdown .row {
+  width: 100%;
+}
+#navigationShopfloor #megadropdown .dropdown-item {
+  width: auto;
 }
 
 #mainContentDashboard .calendar {
